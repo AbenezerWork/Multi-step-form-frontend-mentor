@@ -20,20 +20,24 @@
   <!-- Sidebar start -->
   <div class="sidebar">
   
-    <div id="sidebar-text">
-      <p>STEP 1</p>
+    <div >
+      <button id='1' currunt=true>1</button>
+      <p id="sidebar-text">STEP 1</p>
         
-      <h2>YOUR INFO</h2>
+      <h2 id="sidebar-text">YOUR INFO</h2>
 
-      <p>STEP 2</p> 2
+      <button id='2'>2</button>
+      <p id="sidebar-text">STEP 2</p> 
 
-      <h2>SELECT PLAN</h2>
+      <h2 id="sidebar-text">SELECT PLAN</h2>
 
-      <p>STEP 3</p>
-      <h2>ADD-ONS</h2>
+      <button id='3'>3</button>
+      <p id="sidebar-text">STEP 3</p>
+      <h2 id="sidebar-text">ADD-ONS</h2>
 
-      <p>STEP 4</p>
-      <h2>Summary</h2>
+      <button id='4'>4</button>
+      <p id="sidebar-text">STEP 4</p>
+      <h2 id="sidebar-text">Summary</h2>
     </div>
   </div>
   <!-- Sidebar end -->
@@ -41,7 +45,7 @@
   <!-- Step 1 start -->
 
   <div class="form-container">
-    <div id="step1">
+    <div id="step1" class = "form-content">
             
       <h1>Personal info</h1>
       <p>Please provide your name, email address, and phone number.</p>
@@ -54,14 +58,15 @@
 
       <h2>Phone Number</h2>
       <input type="tel" pattern = "[0-9]{3}-[0-9]{3}-[0-9]{4}" name="Phone-Number" placeholder = "e.g. +1 234 567 890">
-
+    <div id="nav">
       <button>Next Step</button>
+    </div>
 
     </div>  
   <!-- Step 1 end -->
 
   <!-- Step 2 start -->
-  <div id="step2" class = "hidden">
+  <div id="step2"  class = "hidden"class = "form-content">
       
     Select your plan
     You have the option of monthly or yearly billing.
@@ -78,14 +83,15 @@
     Monthly
     Yearly
 
-    Go Back
-    Next Step
-
+    <div id="nav">
+      <a href="#">Go Back</a>
+      <button>Next Step</button>
+    </div>
   </div>
   <!-- Step 2 end -->
 
   <!-- Step 3 start -->
-  <div id="step3" class = "hidden">
+  <div id="step3" class = "hidden"class = "form-content">
     
   Pick add-ons
   Add-ons help enhance your gaming experience.
@@ -108,7 +114,7 @@
   <!-- Step 3 end -->
 
   <!-- Step 4 start -->
-  <div id="step4"class = "hidden">
+  <div id="step4"class = "hidden"class = "form-content">
     p
     
   Finishing up
@@ -125,7 +131,7 @@
   <!-- Step 4 end -->
 
   <!-- Step 5 start -->
-  <div id="step5"class = "hidden">
+  <div id="step5"class = "hidden"class = "form-content">
     
   Thank you!
 
