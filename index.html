@@ -20,32 +20,30 @@
   <!-- Sidebar start -->
   <div class="sidebar">
   
-    <div >
-      <button id='1' currunt=true>1</button>
-      <p id="sidebar-text">STEP 1</p>
-        
-      <h2 id="sidebar-text">YOUR INFO</h2>
+    <button class='one' current="true">1</button>
+    <p id="sidebar-text">STEP 1</p>
+      
+    <h2 id="sidebar-text">YOUR INFO</h2>
 
-      <button id='2'>2</button>
-      <p id="sidebar-text">STEP 2</p> 
+    <button class='two' current="false">2</button>
+    <p id="sidebar-text">STEP 2</p> 
 
-      <h2 id="sidebar-text">SELECT PLAN</h2>
+    <h2 id="sidebar-text">SELECT PLAN</h2>
 
-      <button id='3'>3</button>
-      <p id="sidebar-text">STEP 3</p>
-      <h2 id="sidebar-text">ADD-ONS</h2>
+    <button class='three' current="false">3</button>
+    <p id="sidebar-text">STEP 3</p>
+    <h2 id="sidebar-text">ADD-ONS</h2>
 
-      <button id='4'>4</button>
-      <p id="sidebar-text">STEP 4</p>
-      <h2 id="sidebar-text">Summary</h2>
-    </div>
+    <button class='four' current="false">4</button>
+    <p id="sidebar-text">STEP 4</p>
+    <h2 id="sidebar-text">Summary</h2>
   </div>
   <!-- Sidebar end -->
 
   <!-- Step 1 start -->
 
   <div class="form-container">
-    <div id="step1" class = "form-content">
+    <div id="step1" type = "visible" class = "form-content">
             
       <h1>Personal info</h1>
       <p>Please provide your name, email address, and phone number.</p>
@@ -59,6 +57,9 @@
       <h2>Phone Number</h2>
       <input type="tel" pattern = "[0-9]{3}-[0-9]{3}-[0-9]{4}" name="Phone-Number" placeholder = "e.g. +1 234 567 890">
     <div id="nav">
+      <div>
+        
+      </div>
       <button>Next Step</button>
     </div>
 
@@ -66,23 +67,37 @@
   <!-- Step 1 end -->
 
   <!-- Step 2 start -->
-  <div id="step2"  class = "hidden"class = "form-content">
+  <div id="step2"  type = "hidden" class = "form-content">
       
-    Select your plan
-    You have the option of monthly or yearly billing.
-
-    Arcade
-    $9/mo
-
-    Advanced
-    $12/mo
-
-    Pro
-    $15/mo
-
-    Monthly
-    Yearly
-
+    <h1>Select your plan</h1>
+    <p>You have the option of monthly or yearly billing.</p>
+    <button id="check">
+      <h2 id="bold">Arcade</h2>
+      <p>$9/mo</p>
+      <p type = "hidden">$90/yr </p>
+      <h2 type = "hidden">2 months free</h2>
+    </button>
+    <button id="check">
+      <h2 id="bold">Advanced</h2>
+      <p>$12/mo</p>
+      <p type = "hidden">$120/yr </p>
+      <h2 type = "hidden">2 months free</h2>
+    </button>
+    <button id="check">
+      <h2 id="bold">Pro</h2>
+      <p>$15/mo</p>
+      <p type = "hidden">$150/yr </p>
+      <h2 type = "hidden">2 months free</h2>
+    </button>
+    <div class="toggle-area">
+      <p id = "bold">Monthly</p>
+      <div id="toggle">
+        <div id="bob">
+          
+        </div>
+      </div>
+      <p id = "normal">Yearly</p>
+    </div>
     <div id="nav">
       <a href="#">Go Back</a>
       <button>Next Step</button>
@@ -91,47 +106,61 @@
   <!-- Step 2 end -->
 
   <!-- Step 3 start -->
-  <div id="step3" class = "hidden"class = "form-content">
+  <div id="step3" type = "hidden"class = "form-content">
     
-  Pick add-ons
-  Add-ons help enhance your gaming experience.
-
-  Online service
-  Access to multiplayer games
-  +$1/mo
-
-  Larger storage
-  Extra 1TB of cloud save
-  +$2/mo
-
-  Customizable Profile
-  Custom theme on your profile
-  +$2/mo
-
-  Go Back
-  Next Step
+    <h1>Pick add-ons</h1>
+    <p>Add-ons help enhance your gaming experience.</p>
+    <label>
+      <input type="checkbox" name="" value="">
+        <div id="text">
+            <h2>Online service</h2>
+            <p>Access to multiplayer games</p>
+        </div>
+        <p id = "price">+$1/mo</p>
+      </input>
+    </label>
+    <label>
+      <input type="checkbox" name="" value="">
+        <div id="text">
+            <h2>Larger storage</h2>
+            <p>Extra 1TB of cloud save</p>
+        </div>
+        <p id = "price">+$2/mo</p>
+      </input>
+    </label>
+    <label>
+      <input type="checkbox" name="" value="">
+        <div id="text">
+            <h2>Customizable profile</h2>
+            <p>Custom theme on your profile</p>
+        </div>
+        <p id = "price">+$2/mo</p>
+      </input>
+    </label>
+    <div id="nav">
+      <a href="#">Go Back</a>
+      <button>Next Step</button>
+    </div>
   </div>
   <!-- Step 3 end -->
 
   <!-- Step 4 start -->
-  <div id="step4"class = "hidden"class = "form-content">
-    p
-    
-  Finishing up
-  Double-check everything looks OK before confirming.
+  <div id="step4" type = "hidden"class = "form-content">
+	  <h1>Finishing up</h1>
+	  <p>Double-check everything looks OK before confirming.</p>
+	  
 
-  <!-- Dynamically add subscription and add-on selections here -->
+	  <div id="preference-check"></div>
 
-  Total (per month/year)
+	  <p>Total (per month/year)</p>
 
-  Go Back
-  Confirm
-
+	  <a href="#">Go Back</a>
+	  <button>Next Step</button>
   </div>
   <!-- Step 4 end -->
 
   <!-- Step 5 start -->
-  <div id="step5"class = "hidden"class = "form-content">
+  <div id="step5" type = "hidden" class = "form-content">
     
   Thank you!
 
@@ -148,5 +177,8 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
+  <script src="script.js">
+    
+  </script>
 </body>
 </html>

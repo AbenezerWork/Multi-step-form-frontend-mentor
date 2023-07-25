@@ -18,10 +18,11 @@ $strawberry-red: hsl(354, 84%, 57%);
 *{
   font-family: Ubuntu-Regular;
   box-sizing: inherit;
+  margin: 0px;
   margin: inherit;
 }
 h1{
-  color: $purplish-blue;
+  color: $marine-blue;
 }
 body{
   display: flex;
@@ -29,13 +30,21 @@ body{
   align-items: center;
   flex-direction: column;
 }
+
+h2{
+  font-family: Ubuntu-Bold, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: $marine-blue;
+}
+#step1 h2{
+  font-family: Ubuntu-Regular;
+}
+#bold{
+  font-size: 16px;
+  font-family: Ubuntu-Bold;
+}
 .main-container{
-  h2{
-    font-family: Ubuntu-Regular, sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    color: $marine-blue;
-  }
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -50,6 +59,8 @@ body{
   display: none;
 }
 .sidebar{
+  font-family: Ubuntu-Medium;
+  font-weight: 770;
   position: absolute;
   top: 0px;
   display: flex;
@@ -70,6 +81,11 @@ body{
     padding: 0px;
     background: none;
   }
+   [current=true]{
+    background-color: $light-blue;
+    border-color: $light-blue;
+    color: $marine-blue;
+  }
 }
 
 
@@ -83,18 +99,76 @@ body{
   background-color: hsl(0,0%,100%);
   display: flex;}
 
+  h1, h2, p{
+  margin: 0px;
+  }
+  #text p{
+    font-size: 12px;
+  }
+
+  [type=checkbox]{
+    height: 20px;
+    width: 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+  }
 .form-content{
-  *{
+  >*{
     padding: 10px 0px;
+  }
+  #check{
+    border: 1px solid $marine-blue ;
+    border-radius: 5px;
+    background: none;
+    height: 70px;
+    padding: 10px 0px;
+    margin: 10px 0px;
+  }
+  label{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 10px 0px;
+    border: 1px solid $marine-blue ;
+    border-radius: 5px;
+    background: none;
+    height: 40px;
   }
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  input{
+  [type=text], [type=email], [type=tel]{
     padding: 10px ;
     width: calc(100% - 20px);
   }
 
+}
+.toggle-area{
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  padding: 0px 50px;
+  justify-content: space-between;
+  align-items: center;
+  transition: justify-content 0.5s ease;
+  #toggle{
+    display: flex;
+    border-radius: 12px;
+    height: 16px;
+    padding: 3px;
+    width: 35px;
+    background-color: $marine-blue;
+    justify-content: flex-start;
+    #bob{
+      align-self: center;
+      height: 16px;
+      width: 16px;
+      border-radius: 100%;
+      background-color: #fff;
+    }
+  }
 }
 #nav{
   button{
@@ -104,11 +178,15 @@ body{
     border: none;
     border-radius: 5px;
   }
+  a{
+    position: relative;
+    top: 5px;
+  }
   position: fixed;
   width: calc(100% - 40px);
   margin: 0px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between; 
   padding: 20px;
   background-color: #fff;
   bottom: 0px;
@@ -116,6 +194,6 @@ body{
   right: 0px;
 }
 
-.hidden{
+[type = "hidden"]{
   display: none;
 }
