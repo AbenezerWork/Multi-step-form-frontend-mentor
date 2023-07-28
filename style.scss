@@ -106,15 +106,22 @@ h2{
     font-size: 12px;
   }
 
-  [type=checkbox]{
-    height: 20px;
-    width: 20px;
-    border: 1px solid #000;
-    border-radius: 5px;
-  }
 .form-content{
   >*{
     padding: 10px 0px;
+  }
+  #checkbox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 15px;
+    width: 15px;
+    border-radius: 3px;
+    border: 1px solid lightgrey;
+    img{
+        height: 10px;
+        width: 10px;
+    }
   }
   #check{
     border: 1px solid $marine-blue ;
@@ -131,7 +138,7 @@ h2{
     justify-content: space-between;
     padding: 10px;
     margin: 10px 0px;
-    border: 1px solid $marine-blue ;
+    border: 1px solid lightgrey ;
     border-radius: 5px;
     background: none;
     height: 40px;
@@ -193,7 +200,10 @@ h2{
   left: 0px;
   right: 0px;
 }
-
-[type = "hidden"]{
+#nav [type = 'hidden']>{
+    display: none;
+    background-color: grey;
+}
+[type = 'hidden']{
   display: none;
 }

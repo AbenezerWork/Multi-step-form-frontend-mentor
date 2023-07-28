@@ -56,12 +56,6 @@
 
       <h2>Phone Number</h2>
       <input type="tel" pattern = "[0-9]{3}-[0-9]{3}-[0-9]{4}" name="Phone-Number" placeholder = "e.g. +1 234 567 890">
-    <div id="nav">
-      <div>
-        
-      </div>
-      <button>Next Step</button>
-    </div>
 
     </div>  
   <!-- Step 1 end -->
@@ -98,49 +92,44 @@
       </div>
       <p id = "normal">Yearly</p>
     </div>
-    <div id="nav">
-      <a href="#">Go Back</a>
-      <button>Next Step</button>
-    </div>
   </div>
   <!-- Step 2 end -->
 
   <!-- Step 3 start -->
   <div id="step3" type = "hidden"class = "form-content">
     
-    <h1>Pick add-ons</h1>
-    <p>Add-ons help enhance your gaming experience.</p>
-    <label>
-      <input type="checkbox" name="" value="">
-        <div id="text">
-            <h2>Online service</h2>
-            <p>Access to multiplayer games</p>
-        </div>
-        <p id = "price">+$1/mo</p>
-      </input>
-    </label>
-    <label>
-      <input type="checkbox" name="" value="">
-        <div id="text">
-            <h2>Larger storage</h2>
-            <p>Extra 1TB of cloud save</p>
-        </div>
-        <p id = "price">+$2/mo</p>
-      </input>
-    </label>
-    <label>
-      <input type="checkbox" name="" value="">
-        <div id="text">
-            <h2>Customizable profile</h2>
-            <p>Custom theme on your profile</p>
-        </div>
-        <p id = "price">+$2/mo</p>
-      </input>
-    </label>
-    <div id="nav">
-      <a href="#">Go Back</a>
-      <button>Next Step</button>
-    </div>
+      <h1>Pick add-ons</h1>
+      <p>Add-ons help enhance your gaming experience.</p>
+      <label>
+          <div id="checkbox">
+              <img src="assets/images/icon-checkmark.svg">
+          </div>
+          <div id="text">
+              <h2>Online service</h2>
+              <p>Access to multiplayer games</p>
+          </div>
+          <p id = "price">+$1/mo</p>
+      </label>
+      <label>
+          <div id="checkbox">
+              <img src="assets/images/icon-checkmark.svg">
+          </div>
+          <div id="text">
+              <h2>Larger storage</h2>
+              <p>Extra 1TB of cloud save</p>
+          </div>
+          <p id = "price">+$2/mo</p>
+      </label>
+      <label>
+          <div id="checkbox">
+              <img src="assets/images/icon-checkmark.svg">
+          </div>
+              <div id="text">
+                  <h2>Customizable profile</h2>
+                  <p>Custom theme on your profile</p>
+              </div>
+          <p id = "price">+$2/mo</p>
+      </label>
   </div>
   <!-- Step 3 end -->
 
@@ -153,15 +142,12 @@
 	  <div id="preference-check"></div>
 
 	  <p>Total (per month/year)</p>
-
-	  <a href="#">Go Back</a>
-	  <button>Next Step</button>
   </div>
   <!-- Step 4 end -->
 
   <!-- Step 5 start -->
   <div id="step5" type = "hidden" class = "form-content">
-    
+   <img src = "assets/images/icon-thank-you.svg"> 
   Thank you!
 
   Thanks for confirming your subscription! We hope you have fun 
@@ -170,9 +156,14 @@
 
   </div>
   <!-- Step 5 end -->
+  <div id = "nav">
+      <button>Go Back</button>
+      <button>Next Step</button>
+  </div>
     
     </div>
   </div>
+
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.

@@ -109,13 +109,6 @@ h1, h2, p {
   font-size: 12px;
 }
 
-[type=checkbox] {
-  height: 20px;
-  width: 20px;
-  border: 1px solid #000;
-  border-radius: 5px;
-}
-
 .form-content {
   display: flex;
   flex-direction: column;
@@ -123,6 +116,19 @@ h1, h2, p {
 }
 .form-content > * {
   padding: 10px 0px;
+}
+.form-content #checkbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 15px;
+  width: 15px;
+  border-radius: 3px;
+  border: 1px solid lightgrey;
+}
+.form-content #checkbox img {
+  height: 10px;
+  width: 10px;
 }
 .form-content #check {
   border: 1px solid hsl(213, 96%, 18%);
@@ -139,7 +145,7 @@ h1, h2, p {
   justify-content: space-between;
   padding: 10px;
   margin: 10px 0px;
-  border: 1px solid hsl(213, 96%, 18%);
+  border: 1px solid lightgrey;
   border-radius: 5px;
   background: none;
   height: 40px;

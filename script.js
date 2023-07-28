@@ -1,36 +1,42 @@
+const sidebar = document.querySelector('.sidebar')
+const sideindicators = sidebar.getElementsByTagName('button')
 const form = document.getElementsByClassName("form-content")
 const toggleArea = document.getElementsByClassName('toggle-area')[0]
+let nav = document.getElementById('nav')
+let btn =nav.children[1] 
+const goBack =nav.children[0]
 const toggle = document.getElementById('toggle')
-const sidebar = document.getElementsByClassName("sidebar")
-let sideBtn = document.querySelectorAll('.sidebar button')
 
-for(i=0; i<4;i++){
-	let btn = sideBtn[i]
-	console.log(i)
-	btn.addEventListener('click', ()=>{
-		if(btn.getAttribute("current") != "true"){
-			for(j=0; j<sideBtn.length;j++){
-				if(sideBtn[j].getAttribute("current") == "true"){
-					sideBtn[j].setAttribute("current", false)
-					form[j].setAttribute("type","hidden")
-					console.log(j)
-				}
-			}
-			btn.setAttribute("current", true)
-			form[btn.innerText-1].setAttribute("type","visible")
-			console.log(form[j].getAttribute("type"), j)
-		}
-	})
-}
+console.log(sidebar)
+
+let step = 0
+btn.addEventListener('click', ()=>{
+    if (step!=4){
+        form[step].setAttribute('type','hidden') 
+        form[++step].setAttribute('type','visible') 
+    }else{
+        nav.setAttribute('type','hidden')
+    }
+    if(step<4){
+        sideindicators[step].setAttribute('current','true')
+        sideindicators[step-1].setAttribute('current','false')
+    }
+
+})
+goBack.addEventListener('click',()=>{
+    console.log('hi')
+    form[step].setAttribute('type','hidden') 
+    form[--step].setAttribute('type','visible') 
+})
 toggle.addEventListener('click', ()=>{
-	if(toggle.style.justifyContent == "flex-end"){
-		toggle.style.justifyContent = "flex-start"
-		toggleArea.childNodes[1].setAttribute('id','bold')
-		toggleArea.childNodes[5].setAttribute('id','normal')
-	}else{
-		toggle.style.justifyContent = "flex-end"
-		toggleArea.childNodes[1].setAttribute('id','normal')
-		toggleArea.childNodes[5].setAttribute('id', 'bold')
-	}
+    if(toggle.style.justifyContent == "flex-end"){
+        toggle.style.justifyContent = "flex-start"
+        toggleArea.childNodes[1].setAttribute('id','bold')
+        toggleArea.childNodes[5].setAttribute('id','normal')
+    }else{
+        toggle.style.justifyContent = "flex-end"
+        toggleArea.childNodes[1].setAttribute('id','normal')
+        toggleArea.childNodes[5].setAttribute('id', 'bold')
+    }
 })
 
