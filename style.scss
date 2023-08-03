@@ -124,12 +124,31 @@ h2{
     }
   }
   #check{
-    border: 1px solid $marine-blue ;
+    display: flex;
+    flex-direction: center;
+    justify-content: row;
+    align-items: flex-start;
+    border: 1px solid lightgrey;
     border-radius: 5px;
     background: none;
-    height: 70px;
-    padding: 10px 0px;
+    padding: 10px 10px;
     margin: 10px 0px;
+  }
+  #checked{
+    @extend #check;
+    border: 1px solid $marine-blue ;
+  }
+  #check div{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+  }
+  #check img{
+      padding-right: 10px;
+  }
+  #check div >*{
+      padding: 2px 0px;
   }
   label{
     display: flex;
