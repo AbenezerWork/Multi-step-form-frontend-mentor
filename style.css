@@ -117,19 +117,6 @@ h1, h2, p {
 .form-content > * {
   padding: 10px 0px;
 }
-.form-content #checkbox {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 15px;
-  width: 15px;
-  border-radius: 3px;
-  border: 1px solid lightgrey;
-}
-.form-content #checkbox img {
-  height: 10px;
-  width: 10px;
-}
 .form-content #check, .form-content #checked {
   display: flex;
   flex-direction: center;
@@ -156,7 +143,7 @@ h1, h2, p {
 .form-content #check div > *, .form-content #checked div > * {
   padding: 2px 0px;
 }
-.form-content label {
+.form-content #labelcheck, .form-content #labelchecked {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -167,6 +154,26 @@ h1, h2, p {
   border-radius: 5px;
   background: none;
   height: 40px;
+}
+.form-content #labelcheck #checkbox, .form-content #labelchecked #checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  width: 20px;
+  border-radius: 3px;
+  border: 1px solid lightgrey;
+}
+.form-content #labelcheck #checkbox img, .form-content #labelchecked #checkbox img {
+  height: 15px;
+  width: 15px;
+}
+.form-content #labelchecked {
+  border: 1px solid hsl(213, 96%, 18%);
+}
+.form-content #labelchecked #checkbox {
+  background-color: hsl(243, 100%, 62%);
+  border: none;
 }
 .form-content [type=text], .form-content [type=email], .form-content [type=tel] {
   padding: 10px;

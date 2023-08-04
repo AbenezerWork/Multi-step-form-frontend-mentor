@@ -7,6 +7,7 @@ let nextBtn =nav.children[1]
 const goBack =nav.children[0]
 const toggle = document.getElementById('toggle')
 const step2 = document.getElementById('step2')
+const step3 = document.getElementById('step3')
 const checkButtonsStep2 = step2.getElementsByTagName('button')
 
 console.log(sidebar)
@@ -61,22 +62,37 @@ checkButtonsStep2[0].addEventListener('click',()=>{
     }
 })
 
-const btnTexts = step2.getElementsByTagName('p')
-const headerStep2btn = step2.getElementsByTagName('h2')
+//step3 button implementation
+const checkButtonsStep3 = step3.getElementsByTagName('label')
+
+checkButtonsStep3[0].addEventListener('click',()=>{
+    if(checkButtonsStep3[0].getAttribute('id')=="labelcheck"){
+        checkButtonsStep3[0].setAttribute('id','labelchecked')
+    }else{
+        checkButtonsStep3[0].setAttribute('id','labelcheck')
+    }
+})
+checkButtonsStep3[1].addEventListener('click',()=>{
+    if(checkButtonsStep3[1].getAttribute('id')=="labelcheck"){
+        checkButtonsStep3[1].setAttribute('id','labelchecked')
+    }else{
+        checkButtonsStep3[1].setAttribute('id','labelcheck')
+    }
+})
+checkButtonsStep3[2].addEventListener('click',()=>{
+    if(checkButtonsStep3[2].getAttribute('id')=="labelcheck"){
+        checkButtonsStep3[2].setAttribute('id','labelchecked')
+    }else{
+        checkButtonsStep3[2].setAttribute('id','labelcheck')
+    }
+})
+const btnTexts = document.getElementsByClassName('interchangable')
 function monthYearSwitch(){
-    for(i=1;i<7;i++){
+    for(i=0;i<btnTexts.length;i++){
         if (btnTexts[i].getAttribute('type')=='hidden'){
             btnTexts[i].setAttribute('type','visible')
         }else{
             btnTexts[i].setAttribute('type','hidden')
-        }
-    }
-    for (i=0;i<headerStep2btn.length;i++){
-        if(headerStep2btn[i].getAttribute('id')=='bold'){
-        }else if (headerStep2btn[i].getAttribute('type')=='hidden'){
-            headerStep2btn[i].setAttribute('type','visible')
-        }else{
-            headerStep2btn[i].setAttribute('type','hidden')
         }
     }
 }
