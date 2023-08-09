@@ -134,7 +134,7 @@ function finishingUp(){
     }
     total="<div id='total-row'><p>Total"
     total+=userChoice.yearly?"(per year)":"(per month)"
-    total+="<h2 id='blue'>"+userChoice.totalPrice
+    total+="<h2 id='blue'>$"+userChoice.totalPrice
     total+=userChoice.yearly?"/yr":"/mo"
     total += "</h2></div>"
     preferenceCheck.innerHTML=plan+addons+total
@@ -154,7 +154,7 @@ nextBtn.addEventListener('click', ()=>{
         }
         if(isFilled){
             return;
-        }
+          }
         goBack.setAttribute("type","visible")
     }
     if(step == 1){
