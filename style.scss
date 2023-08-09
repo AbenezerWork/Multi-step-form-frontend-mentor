@@ -316,3 +316,69 @@ display: flex;}
 [type = 'hidden']{
     display: none !important;
 }
+
+
+@media (min-width:720px){
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        background-color: #e9f4ff;
+        height: 100%;
+        width: 100%;
+    }
+    .main-container{
+        box-shadow: 0px 0px 100px -3px rgba(0,0,0,0.1);
+        width: 60%;
+        height:70%;
+        max-height: 560px;
+        max-width: 740px;
+        position:static;
+        flex-direction: row;
+        border-radius: 10px;
+        background-color: #fff;
+    }
+    .form-container{
+        box-shadow: none;
+        position:static;
+        flex-direction: column;
+        height: calc(100% - 80px);
+    }
+    .sidebar{
+        .one, .two, .three, .four{
+            margin:0px;
+        }
+        height: calc(100% - 80px);
+        width: 33%;
+        background-image: url("assets/images/bg-sidebar-desktop.svg");
+        padding: 20px;
+        position: static;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-radius: 10px;
+        margin:20px;
+    }
+    #sidebar-text{
+        display: block;
+    }
+    .sidebar-module{
+        display: flex;
+        flex-direction: row;
+    }
+    .sidebar-text{
+        h2 {
+            font-family: Ubuntu-bold;
+            color: #fff;
+        }
+        p{
+            font-size: 12px;
+            color: #ddd;
+        }
+        padding-left: 20px;
+        margin: 0;
+    }
+    #nav{
+        position: static;
+    }
+}
