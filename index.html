@@ -48,13 +48,19 @@
       <h1>Personal info</h1>
       <p>Please provide your name, email address, and phone number.</p>
 
-      <h2>Name<h2>
+      <div class = 'input-area-text'>
+          <p >Name</p>
+      </div>
       <input placeholder = "e.g Stephen King" type = "text">
 
-      <h2>Email Address</h2>
+      <div class = 'input-area-text'>
+      <p >Email Address</p>
+      </div>
       <input placeholder = "e.g stephenking@lorem.com" type = "email" valid = "true">
 
-      <h2>Phone Number</h2>
+      <div class = 'input-area-text'>
+      <p >Phone Number</p>
+      </div>
       <input type="tel" pattern = "[0-9]{3}-[0-9]{3}-[0-9]{4}" name="Phone-Number" placeholder = "e.g. +1 234 567 890">
 
     </div>  
@@ -151,28 +157,31 @@
 	  <p>Double-check everything looks OK before confirming.</p>
 	  
 
-	  <div id="preference-check"></div>
+	  <div id="preference-check">
 
-	  <p>Total (per month/year)</p>
+      </div>
+
   </div>
   <!-- Step 4 end -->
 
   <!-- Step 5 start -->
   <div id="step5" type = "hidden" class = "form-content">
    <img src = "assets/images/icon-thank-you.svg"> 
-  Thank you!
+   <h1>Thank you!</h1>
+  <p>
 
   Thanks for confirming your subscription! We hope you have fun 
   using our platform. If you ever need support, please feel free 
   to email us at support@loremgaming.com.
-
+   </p>
   </div>
   <!-- Step 5 end -->
   <div id = "nav">
-      <button>Go Back</button>
-      <button>Next Step</button>
+      <button type = "hidden" id = "back-btn">Go Back</button>
+      <div></div>
+      <button id = 'next-btn'>Next Step</button>
   </div>
-    
+
     </div>
   </div>
 

@@ -17,14 +17,18 @@ $light-blue: hsl(206, 94%, 87%);
 $strawberry-red: hsl(354, 84%, 57%);
 *{
   font-family: Ubuntu-Regular;
+  color: #858483;
   box-sizing: inherit;
   margin: 0px;
   margin: inherit;
 }
 h1{
+    font-family: Ubuntu-Bold;
+    font-size: 24px;
   color: $marine-blue;
 }
 body{
+    margin: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,17 +36,14 @@ body{
 }
 
 h2{
-  font-family: Ubuntu-Bold, sans-serif;
+  font-family: Ubuntu-Medium, sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: $marine-blue;
 }
-#step1 h2{
-  font-family: Ubuntu-Regular;
-}
 #bold{
   font-size: 16px;
-  font-family: Ubuntu-Bold;
+  font-family: Ubuntu-Medium;
 }
 .main-container{
   display: flex;
@@ -53,7 +54,7 @@ h2{
   bottom: 0px;
   top: 0px;
   position: absolute;
-  background-color: $light-blue;
+  background-color: #e9f4ff;
 }
 #sidebar-text{
   display: none;
@@ -89,28 +90,35 @@ h2{
 }
 
 
-.form-container{
-  padding: 20px;
-  border-radius: 10px;
-  position: absolute;
-  top: 120px;
-  width: 80%;
-  align-self: center;
-  background-color: hsl(0,0%,100%);
-  display: flex;}
+#input-area-text{
+    padding-bottom: 0px;
+}
 
-  h1, h2, p{
-  margin: 0px;
-  }
+.form-container{
+    box-shadow: 0px 31px 75px -3px rgba(0,0,0,0.14);
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    top: 120px;
+    width: 80%;
+    align-self: center;
+    background-color: hsl(0,0%,100%);
+display: flex;}
+
   #text p{
     font-size: 12px;
   }
 
   .form-content{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
       >*{
           padding: 10px 0px;
       }
       #check{
+          @extend #next-btn;
           display: flex;
           flex-direction: center;
           justify-content: row;
@@ -121,6 +129,14 @@ h2{
           padding: 10px 10px;
           margin: 10px 0px;
       }
+      #check >*{
+          margin: 0px;
+      }
+      button div{
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+      }
       #checked{
           @extend #check;
           border: 1px solid $marine-blue ;
@@ -129,13 +145,11 @@ h2{
           display: flex;
           flex-direction: column;
           align-items: flex-start;
-          justify-content: space-between;
+          height: 50px;
+          padding: 0px;
       }
       #check img{
           padding-right: 10px;
-      }
-      #check div >*{
-          padding: 2px 0px;
       }
       #labelcheck {
           #checkbox{
@@ -171,67 +185,134 @@ h2{
           }
       }
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  [type=text], [type=email], [type=tel]{
-    padding: 10px ;
-    width: calc(100% - 20px);
-  }
+      input {
+          border: 1px solid lightgrey;
+          border-radius: 5px;
+          padding: 10px ;
+          width: calc(100% - 20px);
+      }
+
+      #error{
+          border-color: $strawberry-red;
+      }
 
 }
-.toggle-area{
-  height: 50px;
-  display: flex;
-  flex-direction: row;
-  padding: 0px 50px;
-  justify-content: space-between;
-  align-items: center;
-  transition: justify-content 0.5s ease;
-  #toggle{
+.input-area-text{
     display: flex;
-    border-radius: 12px;
-    height: 16px;
-    padding: 3px;
-    width: 35px;
-    background-color: $marine-blue;
-    justify-content: flex-start;
-    #bob{
-      align-self: center;
-      height: 16px;
-      width: 16px;
-      border-radius: 100%;
-      background-color: #fff;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 0px;
+    p {
+        color: $marine-blue;
+        font-size: 12px;
     }
-  }
+}
+#red{
+    color: $strawberry-red;
+}
+.toggle-area{
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    padding: 0px 50px;
+    justify-content: space-between;
+    align-items: center;
+    transition: justify-content 0.5s ease;
+    #toggle{
+        display: flex;
+        border-radius: 12px;
+        height: 16px;
+        padding: 3px;
+        width: 35px;
+        background-color: $marine-blue;
+        justify-content: flex-start;
+        #bob{
+            align-self: center;
+            height: 16px;
+            width: 16px;
+            border-radius: 100%;
+            background-color: #fff;
+        }
+    }
 }
 #nav{
-  button{
-    padding: 10px 20px;
-    background-color: $marine-blue;
-    color: hsl(0,0%,100%);
-    border: none;
-    border-radius: 5px;
-  }
-  a{
-    position: relative;
-    top: 5px;
-  }
-  position: fixed;
-  width: calc(100% - 40px);
-  margin: 0px;
-  display: flex;
-  justify-content: space-between; 
-  padding: 20px;
-  background-color: #fff;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
+    #next-btn{
+        padding: 10px 20px;
+        background-color: $marine-blue;
+        color: hsl(0,0%,100%);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    #confirm {
+        @extend #next-btn;
+        background-color: $purplish-blue;
+    }
+    #back-btn{
+        border: none;
+        background: none;
+        color: grey;
+        text-decoration: underline;
+        cursor: pointer;
+        &:hover{
+            transition: text-decoration 0.5s ease-in-out;
+            text-decoration: none;
+        }
+    }
+    
+    a{
+        position: relative;
+        top: 5px;
+    }
+    position: fixed;
+    width: calc(100% - 40px);
+    display: flex;
+    justify-content: space-between; 
+    padding: 20px;
+    background-color: #fff;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
 }
-#nav [type = 'hidden']>{
-    display: none;
-    background-color: grey;
+#step4{
+    #addon-row{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 0px;
+    }
+    #plan-row{
+        @extend #addon-row;
+        border-bottom: 1px solid lightgrey;
+
+    }
+    #total-row{
+        @extend #addon-row;
+    }
+    #light{
+        font-size: 12px;
+    }
 }
+#blue{
+    color: $purplish-blue;
+    font-size: 16px;
+}
+#step5{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 10px;
+    text-align: center;
+    p{
+        font-size: 18px;
+    }
+
+    img{
+        height: 60px;
+        width: 60px;
+    }
+}
+
 [type = 'hidden']{
-  display: none;
+    display: none !important;
 }

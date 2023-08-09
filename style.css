@@ -12,16 +12,20 @@
 }
 * {
   font-family: Ubuntu-Regular;
+  color: #858483;
   box-sizing: inherit;
   margin: 0px;
   margin: inherit;
 }
 
 h1 {
+  font-family: Ubuntu-Bold;
+  font-size: 24px;
   color: hsl(213, 96%, 18%);
 }
 
 body {
+  margin: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,19 +33,15 @@ body {
 }
 
 h2 {
-  font-family: Ubuntu-Bold, sans-serif;
+  font-family: Ubuntu-Medium, sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: hsl(213, 96%, 18%);
 }
 
-#step1 h2 {
-  font-family: Ubuntu-Regular;
-}
-
 #bold {
   font-size: 16px;
-  font-family: Ubuntu-Bold;
+  font-family: Ubuntu-Medium;
 }
 
 .main-container {
@@ -53,7 +53,7 @@ h2 {
   bottom: 0px;
   top: 0px;
   position: absolute;
-  background-color: hsl(206, 94%, 87%);
+  background-color: #e9f4ff;
 }
 
 #sidebar-text {
@@ -90,7 +90,12 @@ h2 {
   color: hsl(213, 96%, 18%);
 }
 
+#input-area-text {
+  padding-bottom: 0px;
+}
+
 .form-container {
+  box-shadow: 0px 31px 75px -3px rgba(0, 0, 0, 0.14);
   padding: 20px;
   border-radius: 10px;
   position: absolute;
@@ -101,10 +106,6 @@ h2 {
   display: flex;
 }
 
-h1, h2, p {
-  margin: 0px;
-}
-
 #text p {
   font-size: 12px;
 }
@@ -113,6 +114,7 @@ h1, h2, p {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 100%;
 }
 .form-content > * {
   padding: 10px 0px;
@@ -128,6 +130,14 @@ h1, h2, p {
   padding: 10px 10px;
   margin: 10px 0px;
 }
+.form-content #check > *, .form-content #checked > * {
+  margin: 0px;
+}
+.form-content button div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 .form-content #checked {
   border: 1px solid hsl(213, 96%, 18%);
 }
@@ -135,13 +145,11 @@ h1, h2, p {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
+  height: 50px;
+  padding: 0px;
 }
 .form-content #check img, .form-content #checked img {
   padding-right: 10px;
-}
-.form-content #check div > *, .form-content #checked div > * {
-  padding: 2px 0px;
 }
 .form-content #labelcheck, .form-content #labelchecked {
   display: flex;
@@ -175,9 +183,29 @@ h1, h2, p {
   background-color: hsl(243, 100%, 62%);
   border: none;
 }
-.form-content [type=text], .form-content [type=email], .form-content [type=tel] {
+.form-content input {
+  border: 1px solid lightgrey;
+  border-radius: 5px;
   padding: 10px;
   width: calc(100% - 20px);
+}
+.form-content #error {
+  border-color: hsl(354, 84%, 57%);
+}
+
+.input-area-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 0px;
+}
+.input-area-text p {
+  color: hsl(213, 96%, 18%);
+  font-size: 12px;
+}
+
+#red {
+  color: hsl(354, 84%, 57%);
 }
 
 .toggle-area {
@@ -209,7 +237,6 @@ h1, h2, p {
 #nav {
   position: fixed;
   width: calc(100% - 40px);
-  margin: 0px;
   display: flex;
   justify-content: space-between;
   padding: 20px;
@@ -218,20 +245,68 @@ h1, h2, p {
   left: 0px;
   right: 0px;
 }
-#nav button {
+#nav #next-btn, #nav #confirm, #nav .form-content #check, .form-content #nav #check, #nav .form-content #checked, .form-content #nav #checked {
   padding: 10px 20px;
   background-color: hsl(213, 96%, 18%);
   color: hsl(0, 0%, 100%);
   border: none;
   border-radius: 5px;
+  cursor: pointer;
+}
+#nav #confirm {
+  background-color: hsl(243, 100%, 62%);
+}
+#nav #back-btn {
+  border: none;
+  background: none;
+  color: grey;
+  text-decoration: underline;
+  cursor: pointer;
+}
+#nav #back-btn:hover {
+  transition: text-decoration 0.5s ease-in-out;
+  text-decoration: none;
 }
 #nav a {
   position: relative;
   top: 5px;
 }
 
+#step4 #addon-row, #step4 #total-row, #step4 #plan-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 0px;
+}
+#step4 #plan-row {
+  border-bottom: 1px solid lightgrey;
+}
+#step4 #light {
+  font-size: 12px;
+}
+
+#blue {
+  color: hsl(243, 100%, 62%);
+  font-size: 16px;
+}
+
+#step5 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 10px;
+  text-align: center;
+}
+#step5 p {
+  font-size: 18px;
+}
+#step5 img {
+  height: 60px;
+  width: 60px;
+}
+
 [type=hidden] {
-  display: none;
+  display: none !important;
 }
 
 /*# sourceMappingURL=style.css.map */
