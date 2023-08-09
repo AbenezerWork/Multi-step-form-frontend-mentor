@@ -42,6 +42,7 @@ h2{
   color: $marine-blue;
 }
 #bold{
+    color: $marine-blue;
   font-size: 16px;
   font-family: Ubuntu-Medium;
 }
@@ -74,9 +75,9 @@ h2{
   height: 200px;
   button{
     color: hsl(0,0%,100%);
-    border: solid 2px;
-    height: 35px;
-    width: 35px;
+    border: solid 1px;
+    height: 25px;
+    width: 25px;
     margin: 40px 5px;
     border-radius: 50%;
     padding: 0px;
@@ -329,12 +330,18 @@ display: flex;}
         width: 100%;
     }
     .main-container{
+        display: grid;
+        grid-template-rows: 1.6fr 0.3fr;
+        grid-template-columns: 0.3fr 1fr;
         box-shadow: 0px 0px 100px -3px rgba(0,0,0,0.1);
         width: 60%;
         height:70%;
         max-height: 560px;
-        max-width: 740px;
+        max-width: 940px;
+        min-width: 700px;
+        min-height: 540px;
         position:static;
+        padding: 20px;
         flex-direction: row;
         border-radius: 10px;
         background-color: #fff;
@@ -343,21 +350,27 @@ display: flex;}
         box-shadow: none;
         position:static;
         flex-direction: column;
-        height: calc(100% - 80px);
+        height: calc(100% - 40px);
+        width: 78%;
+        padding: 0px 12%;
+        grid-row-start: 1;
+        grid-row-end: 2;
     }
     .sidebar{
         .one, .two, .three, .four{
             margin:0px;
         }
-        height: calc(100% - 80px);
+        grid-row-start: 1;
+        grid-row-end: 3;
+        height: calc(100% - 40px);
         width: 33%;
+        min-width: 200px;
         background-image: url("assets/images/bg-sidebar-desktop.svg");
         padding: 20px;
         position: static;
         flex-direction: column;
         justify-content: flex-start;
         border-radius: 10px;
-        margin:20px;
     }
     #sidebar-text{
         display: block;
@@ -365,6 +378,7 @@ display: flex;}
     .sidebar-module{
         display: flex;
         flex-direction: row;
+        padding: 10px;
     }
     .sidebar-text{
         h2 {
