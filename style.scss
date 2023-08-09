@@ -153,6 +153,15 @@ display: flex;}
           padding-right: 10px;
       }
       #labelcheck {
+          div{
+              display: flex;
+              flex-direction: row;
+          }
+          #text{
+              flex-direction: column;
+              justify-content: center;
+              margin: 3px 5px;
+          }
           #checkbox{
               display: flex;
               justify-content: center;

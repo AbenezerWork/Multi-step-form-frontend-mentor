@@ -164,6 +164,15 @@ h2 {
   background: none;
   height: 40px;
 }
+.form-content #labelcheck div, .form-content #labelchecked div {
+  display: flex;
+  flex-direction: row;
+}
+.form-content #labelcheck #text, .form-content #labelchecked #text {
+  flex-direction: column;
+  justify-content: center;
+  margin: 3px 5px;
+}
 .form-content #labelcheck #checkbox, .form-content #labelchecked #checkbox {
   display: flex;
   justify-content: center;
