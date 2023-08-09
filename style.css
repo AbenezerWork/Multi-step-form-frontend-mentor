@@ -323,7 +323,7 @@ h2 {
   .main-container {
     display: grid;
     grid-template-rows: 1.6fr 0.3fr;
-    grid-template-columns: 0.3fr 1fr;
+    grid-template-columns: 0.4fr 1fr;
     box-shadow: 0px 0px 100px -3px rgba(0, 0, 0, 0.1);
     width: 60%;
     height: 70%;
@@ -351,7 +351,7 @@ h2 {
     grid-row-start: 1;
     grid-row-end: 3;
     height: calc(100% - 40px);
-    width: 33%;
+    width: calc(100% - 40px);
     min-width: 200px;
     background-image: url("assets/images/bg-sidebar-desktop.svg");
     padding: 20px;
@@ -369,7 +369,7 @@ h2 {
   .sidebar-module {
     display: flex;
     flex-direction: row;
-    padding: 10px;
+    padding: 20px 10px;
   }
   .sidebar-text {
     padding-left: 20px;
