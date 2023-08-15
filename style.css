@@ -120,7 +120,7 @@ h2 {
 .form-content > * {
   padding: 10px 0px;
 }
-.form-content #check, .form-content #checked {
+.form-content #check, .form-content #checked, .form-content #check:hover, .form-content #checked:hover {
   display: flex;
   flex-direction: center;
   justify-content: row;
@@ -131,7 +131,7 @@ h2 {
   padding: 10px 10px;
   margin: 10px 0px;
 }
-.form-content #check > *, .form-content #checked > * {
+.form-content #check > *, .form-content #checked > *, .form-content #check:hover > *, .form-content #checked:hover > * {
   margin: 0px;
 }
 .form-content button div {
@@ -139,20 +139,20 @@ h2 {
   flex-direction: column;
   justify-content: space-around;
 }
-.form-content #checked {
+.form-content #checked, .form-content #check:hover, .form-content #checked:hover {
   border: 1px solid hsl(213, 96%, 18%);
 }
-.form-content #check div, .form-content #checked div {
+.form-content #check div, .form-content #checked div, .form-content #check:hover div, .form-content #checked:hover div {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   height: 50px;
   padding: 0px;
 }
-.form-content #check img, .form-content #checked img {
+.form-content #check img, .form-content #checked img, .form-content #check:hover img, .form-content #checked:hover img {
   padding-right: 10px;
 }
-.form-content #labelcheck, .form-content #labelchecked {
+.form-content #labelcheck, .form-content #labelchecked, .form-content #labelcheck:hover {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -164,7 +164,7 @@ h2 {
   background: none;
   height: 40px;
 }
-.form-content #labelcheck div, .form-content #labelchecked div {
+.form-content #labelcheck div, .form-content #labelchecked div, .form-content #labelcheck:hover div {
   display: flex;
   flex-direction: row;
 }
@@ -186,10 +186,13 @@ h2 {
   height: 15px;
   width: 15px;
 }
-.form-content #labelchecked {
+.form-content #labelchecked, .form-content #labelcheck:hover, .form-content #labelchecked:hover {
   border: 1px solid hsl(213, 96%, 18%);
 }
 .form-content #labelchecked #checkbox {
+  background-image: url("assets/images/icon-checkmark.svg");
+  background-repeat: no-repeat;
+  background-position: center;
   background-color: hsl(243, 100%, 62%);
   border: none;
 }
@@ -222,8 +225,7 @@ h2 {
   height: 50px;
   display: flex;
   flex-direction: row;
-  padding: 0px 50px;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   transition: justify-content 0.5s ease;
 }
@@ -232,16 +234,30 @@ h2 {
   border-radius: 12px;
   height: 16px;
   padding: 3px;
+  margin: 0px 30px;
   width: 35px;
   background-color: hsl(213, 96%, 18%);
   justify-content: flex-start;
 }
 .toggle-area #toggle #bob {
+  margin: 0px;
   align-self: center;
   height: 16px;
   width: 16px;
   border-radius: 100%;
   background-color: #fff;
+}
+
+.go-back {
+  border: none;
+  background: none;
+  color: grey;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.go-back:hover {
+  transition: text-decoration 0.5s ease-in-out;
+  text-decoration: none;
 }
 
 #nav {
@@ -265,17 +281,6 @@ h2 {
 }
 #nav #confirm {
   background-color: hsl(243, 100%, 62%);
-}
-#nav #back-btn {
-  border: none;
-  background: none;
-  color: grey;
-  text-decoration: underline;
-  cursor: pointer;
-}
-#nav #back-btn:hover {
-  transition: text-decoration 0.5s ease-in-out;
-  text-decoration: none;
 }
 #nav a {
   position: relative;
@@ -395,6 +400,10 @@ h2 {
   #nav {
     position: static;
   }
+}
+#change {
+  display: flex;
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=style.css.map */

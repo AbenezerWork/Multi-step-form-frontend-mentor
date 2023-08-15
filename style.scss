@@ -138,7 +138,7 @@ display: flex;}
           flex-direction: column;
           justify-content: space-around;
       }
-      #checked{
+      #checked, #check:hover{
           @extend #check;
           border: 1px solid $marine-blue ;
       }
@@ -186,14 +186,19 @@ display: flex;}
           background: none;
           height: 40px;
       }
-      #labelchecked {
+      #labelchecked, #labelcheck:hover{
           @extend #labelcheck;
           border: 1px solid $marine-blue;
-          #checkbox{
-              background-color: $purplish-blue;
-              border: none;
-          }
       }
+
+      #labelchecked #checkbox{
+          background-image: url("assets/images/icon-checkmark.svg");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-color: $purplish-blue;
+          border: none;
+      }
+
 
       input {
           border: 1px solid lightgrey;
@@ -224,8 +229,7 @@ display: flex;}
     height: 50px;
     display: flex;
     flex-direction: row;
-    padding: 0px 50px;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     transition: justify-content 0.5s ease;
     #toggle{
@@ -233,16 +237,29 @@ display: flex;}
         border-radius: 12px;
         height: 16px;
         padding: 3px;
+        margin: 0px 30px;
         width: 35px;
         background-color: $marine-blue;
         justify-content: flex-start;
         #bob{
+            margin: 0px;
             align-self: center;
             height: 16px;
             width: 16px;
             border-radius: 100%;
             background-color: #fff;
         }
+    }
+}
+.go-back{
+    border: none;
+    background: none;
+    color: grey;
+    text-decoration: underline;
+    cursor: pointer;
+    &:hover{
+        transition: text-decoration 0.5s ease-in-out;
+        text-decoration: none;
     }
 }
 #nav{
@@ -257,17 +274,6 @@ display: flex;}
     #confirm {
         @extend #next-btn;
         background-color: $purplish-blue;
-    }
-    #back-btn{
-        border: none;
-        background: none;
-        color: grey;
-        text-decoration: underline;
-        cursor: pointer;
-        &:hover{
-            transition: text-decoration 0.5s ease-in-out;
-            text-decoration: none;
-        }
     }
     
     a{
@@ -404,4 +410,8 @@ display: flex;}
     #nav{
         position: static;
     }
+}
+#change {
+    display: flex;
+    flex-direction: column;
 }
