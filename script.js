@@ -113,7 +113,7 @@ function finishingUp() {
   userChoice.price();
   console.log("finishingUp");
   const plan = document.getElementById("plan-check");
-  plan.firstChild.innerHTML = userChoice.pro
+  plan.getElementsByTagName('h2')[0].innerHTML = userChoice.pro
     ? "Pro"
     : userChoice.arcade
     ? "Arcade"
