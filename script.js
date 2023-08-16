@@ -195,6 +195,12 @@ nextBtn.addEventListener("click", () => {
   console.log(step);
 });
 goBack.addEventListener("click", () => {
+  if (step == 3){
+
+    nextBtn.setAttribute("id", "next-btn");
+    nextBtn.style.backgroundColor = "hsl(213, 96%, 18%)";
+    nextBtn.innerHTML = "Next Step";
+  }
   console.log("hi");
   if (step == 1) {
     goBack.setAttribute("type", "hidden");
