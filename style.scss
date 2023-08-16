@@ -297,12 +297,12 @@ display: flex;}
         justify-content: space-between;
         padding: 10px 0px;
     }
-    #plan-row{
+    #plan-check{
         @extend #addon-row;
         border-bottom: 1px solid lightgrey;
 
     }
-    #total-row{
+    .total-check{
         @extend #addon-row;
     }
     #light{

@@ -108,8 +108,10 @@ const userChoice = {
 console.log(sidebar);
 
 let step = 0;
+
 function finishingUp() {
   userChoice.price();
+  console.log("finishingUp");
   const plan = document.getElementById("plan-check");
   plan.firstChild.innerHTML = userChoice.pro
     ? "Pro"
@@ -117,11 +119,8 @@ function finishingUp() {
     ? "Arcade"
     : "Advanced";
 
-  preferenceCheck.getElementsByTagName("h2")[1].innerHTML =
-    userChoice.planPrice;
-  preferenceCheck.getElementsByTagName("h2")[1],
-    innerHTML = userChoice.yearly ? "/yr" : "/mo";
-  userChoice.planPrice;
+  preferenceCheck.getElementsByClassName("addons-check").innerHTML = "";
+  preferenceCheck.getElementsByTagName("h2")[1].innerHTML = userChoice.planPrice;
   addons = "";
   if (userChoice.onlineServices) {
     addons += "<div id = 'addon-row'><p id = 'light'>Online Services</p><p>" +
@@ -136,12 +135,15 @@ function finishingUp() {
       "<div id = 'addon-row'><p id = 'light'>Customizable profile</p><p>" +
       userChoice.addonPrice.CusP + "</p></div>";
   }
-  total = "<div id='total-row'><p>Total";
+  const totalCheck = preferenceCheck.getElementsByClassName("total-check");
+  total = "Total";
   total += userChoice.yearly ? "(per year)" : "(per month)";
-  total += "<h2 id='blue'>$" + userChoice.totalPrice;
-  total += userChoice.yearly ? "/yr" : "/mo";
-  total += "</h2></div>";
-  preferenceCheck.getElementsByClassName('addons-check')[0].innerHTML += addons + total;
+  totalCheck[0].getElementsByClassName("total")[0].innerHTML = total;
+  totalNum = preferenceCheck.getElementsByClassName('total-check')[0].childNodes[2]
+  totalNum.innerHTML = "$" + userChoice.totalPrice
+  totalNum.innerHTML +=  userChoice.yearly ? "/yr" : "/mo";
+  console.log(userChoice.totalPrice);
+  preferenceCheck.getElementsByClassName("addons-check")[0].innerHTML = addons;
 }
 
 // implementing navigation button
@@ -181,6 +183,7 @@ nextBtn.addEventListener("click", () => {
     nextBtn.setAttribute("id", "confirm");
     nextBtn.style.backgroundColor = "hsl(243, 100%, 62%)";
     nextBtn.innerHTML = "confirm";
+  } else {
   }
   if (step == 4) {
     nav.style.display = "none";
@@ -247,34 +250,59 @@ checkButtonsStep2[2].addEventListener("click", () => {
 });
 //step3 button implementation
 const checkButtonsStep3 = step3.getElementsByTagName("label");
+const checkButtonsStep3Length = checkButtonsStep3.length;
+const step3checks = [
+  userChoice.onlineServices,
+  userChoice.largerStorage,
+  userChoice.customProf,
+];
+for (let i = 0; i < checkButtonsStep3Length; i++) {
+  checkButtonsStep3[i].addEventListener("click", function () {
+    console.log(i + "listener");
+    if (step3checks[i] == false) {
+      checkButtonsStep3[i].setAttribute("id", "labelchecked");
+      step3checks[i] = true;
+    } else {
+      checkButtonsStep3[i].setAttribute("id", "labelcheck");
+      step3checks[i] = false;
+    }
+    userChoice.onlineServices = step3checks[0];
+    userChoice.largerStorage = step3checks[1];
+    userChoice.customProf = step3checks[2];
+  });
+}
 
-checkButtonsStep3[0].addEventListener("click", () => {
-  if (userChoice.onlineServices == false) {
-    checkButtonsStep3[0].setAttribute("id", "labelchecked");
-    userChoice.onlineServices = true;
-  } else {
-    checkButtonsStep3[0].setAttribute("id", "labelcheck");
-    userChoice.onlineServices = false;
-  }
-});
-checkButtonsStep3[1].addEventListener("click", () => {
-  if (userChoice.largerStorage == false) {
-    checkButtonsStep3[1].setAttribute("id", "labelchecked");
-    userChoice.largerStorage = true;
-  } else {
-    checkButtonsStep3[1].setAttribute("id", "labelcheck");
-    userChoice.largerStorage = false;
-  }
-});
-checkButtonsStep3[2].addEventListener("click", () => {
-  if (userChoice.customProf == false) {
-    checkButtonsStep3[2].setAttribute("id", "labelchecked");
-    userChoice.customProf = true;
-  } else {
-    checkButtonsStep3[2].setAttribute("id", "labelcheck");
-    userChoice.customProf = false;
-  }
-});
+//const checkButtonsStep3 = step3.getElementsByTagName("label");
+//for (i=0;i<3;i++){
+//
+//  checkButtonsStep3[i].addEventListener("click", () => {
+//    if (userChoice.onlineServices == false) {
+//      checkButtonsStep3[i].setAttribute("id", "labelchecked");
+//      userChoice.onlineServices = true;
+//    } else {
+//      checkButtonsStep3[i].setAttribute("id", "labelcheck");
+//      userChoice.onlineServices = false;
+//    }
+//  });
+//}
+//checkButtonsStep3[1].addEventListener("click", () => {
+//  if (userChoice.largerStorage == false) {
+//    checkButtonsStep3[1].setAttribute("id", "labelchecked");
+//    userChoice.largerStorage = true;
+//  } else {
+//    checkButtonsStep3[1].setAttribute("id", "labelcheck");
+//    userChoice.largerStorage = false;
+//  }
+//});
+//checkButtonsStep3[2].addEventListener("click", () => {
+//  if (userChoice.customProf == false) {
+//    checkButtonsStep3[2].setAttribute("id", "labelchecked");
+//    userChoice.customProf = true;
+//  } else {
+//    checkButtonsStep3[2].setAttribute("id", "labelcheck");
+//    userChoice.customProf = false;
+//  }
+//});
 const btnTexts = document.getElementsByClassName("interchangable");
 function monthYearSwitch() {
   for (i = 0; i < btnTexts.length; i++) {
@@ -283,13 +311,6 @@ function monthYearSwitch() {
     } else {
       btnTexts[i].setAttribute("type", "hidden");
     }
-  }
-}
-
-function clearSelection() {
-  for (i = 0; i < 3; i++) {
-    checkButtonsStep2[i].setAttribute("id", "check");
-    checkButtonsStep3[i].setAttribute("id", "labelcheck");
   }
 }
 
@@ -314,4 +335,8 @@ document.getElementsByClassName("change")[0].addEventListener("click", () => {
   form[step].setAttribute("type", "hidden");
   step = 1;
   form[step].setAttribute("type", "visible");
+
+  nextBtn.setAttribute("id", "next-btn");
+  nextBtn.style.backgroundColor = "hsl(213, 96%, 18%)";
+  nextBtn.innerHTML = "Next Step";
 });

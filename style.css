@@ -287,13 +287,13 @@ h2 {
   top: 5px;
 }
 
-#step4 #addon-row, #step4 #total-row, #step4 #plan-row {
+#step4 #addon-row, #step4 .total-check, #step4 #plan-check {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 10px 0px;
 }
-#step4 #plan-row {
+#step4 #plan-check {
   border-bottom: 1px solid lightgrey;
 }
 #step4 #light {
